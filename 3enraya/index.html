@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          font-family: "Audiowide", sans-serif;
+          background-color: darkslategrey;
+          height: 100vh;
+        }
+          
+        .p1{
+            margin-top:8px;
+            height: 20px;
+            width: 100px;
+            background-color: salmon;
+            margin-bottom: 5px;
+            text-align: center;
+            border: solid 2px black;
+        }
+        .p2{
+            margin-bottom: 8px;
+            height: 20px;
+            width: 100px;
+            background-color: lightyellow;
+            text-align: center;
+            border: solid 2px black;
+        }
+
+        .tablero{
+            position:absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-content: center;
+            gap:10px;
+            
+        }
+        .container{
+            width: 598px;
+            margin:auto;
+            display: grid;
+            align-content: start;
+            grid-template-columns: auto 1fr ;
+            
+        }
+
+        .boton{
+            width: 193px;
+            height: 193px;
+            background-color: slategrey;
+            color:transparent;
+            border: solid 4px black;
+            border-radius: 16px;
+        }
+       
+        .gana{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 300px;
+            text-align: center;
+            font-size: 40px;
+            color: rgb(229, 255, 0);
+            -webkit-text-stroke: 1px black;
+            z-index: 2;
+        }
+        
+        h1{
+            margin-top: 0px;
+            margin-left: 90px;
+            padding:0px
+        }
+    </style>
+</head>
+<body>
+    <div class = 'container'>
+        <div>
+            <div class = 'p1'> Player 1</div>
+            <div class = 'p2'> Player 2</div>
+        </div>
+        
+            <h1>3 EN RAYA</h1>
+        
+        
+    </div> 
+    <h2 class = 'gana'></h2>
+        
+    <div class = 'tablero'>
+            <button class = 'boton'>1</button>
+            <button class = 'boton'>2</button>
+            <button class = 'boton'>3</button>
+            <button class = 'boton'>4</button>
+            <button class = 'boton'>5</button>
+            <button class = 'boton'>6</button>
+            <button class = 'boton'>7</button>
+            <button class = 'boton'>8</button>
+            <button class = 'boton'>9</button>
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>
+
+
+
