@@ -7,35 +7,148 @@
   <title>Document</title>
 </head>
 <style>
-  .cerrartodo{
-    display: none;
+  
+  body{
+    background-color: #d9888c ;
+    display:grid;
+    place-content: center;
   }
+
+  body h1{
+    text-align: center;
+  }
+  .container{
+    
+    width: 600px;
+    height: auto;
+    background-color: #d9b17e;
+    border: solid 2px #d467aa;
+    border-radius: 16px;
+  }
+  .fecha{
+    margin-top: 8px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+
+  }
+  .titulo{
+    display:grid;
+    justify-content: start;
+    margin: 10px 25px 10px 25px;
+  }
+
+  .anadirtarea{
+    display:grid;
+    justify-content: center;
+  }
+
+  .elinput{
+    width:485px;
+    height:20px;
+    border-radius: 8px;
+    padding: 4px;
+  }
+  .anadir{
+    background-color: #dcdc8d;
+    height:33px;
+    width: 50px;
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+
+  }
+
+  .elementos {
+    margin-left:26px;
+    list-style: none;
+    width:485px;
+    border-radius:8px;
+    background-color: rgba(245, 245, 245, 0.500) ;
+    display:grid;
+    justify-content: start;
+    padding-left: 10px;
+    margin-top: 12px;
+  
+  }
+  .elementos li{
+    width:485px;
+    display: flex;
+    word-wrap: normal;
+    justify-content: space-between;
+    
+  }
+
+  .elementos li p{
+    width:385px;
+    word-wrap: normal;
+    font-size: medium;
+    font-weight: bold;
+    word-wrap: normal;
+  }
+  
+
+  .elementos button{
+    background-color: #d467aa;
+    border-radius: 4px;
+    height: 24px;
+    width: 100px;
+    color:whitesmoke;
+    cursor:pointer;
+    margin:auto 8px auto auto;
+    
+    
+  }
+
+  .under{
+    display:grid;
+    justify-content: end;
+  }
+  
+
+  .cerrartodo{
+    background-color: #d467aa;
+    color: whitesmoke;
+    border-radius: 4px;
+    margin: 20px;
+  }
+  .vacio{
+    margin-left: 30px;
+  }
+  
+
 
 
 </style>
 
 <body>
+  <h1 class = "LISTA DE TAREAS">LISTA DE TAREAS</h1>
   <div class = "container">
     <div class = "titulo">
       <div class = "fecha">fecha</div>
-      <h1 class = "LISTA DE TAREAS">LISTA DE TAREAS</h1>
+      
+      
+    </div>
     <div class = "anadirtarea">    
       <form>
-        <input type = "text" placeholder="Añadir una tarea.">
+        <input type = "text" class ="elinput" placeholder="Añadir una tarea.">
         <button class = "anadir">Add</button>
 
       </form>
     </div>
-    <div class = "lista">
-      <button class = "cerrartodo">cerrartodo</button>
-      <ul>
-        
-      </ul>
-      
-    </div>
-    <div class = "vacio"> <p>No hay tareas</p></div>
+    
+    <ul class = "elementos">
+    </ul>
+         
+    <div class = "vacio"> <p>No hay tareas pendientes</p></div>
+    <div class ="under"><button class = "cerrartodo">Eliminar todo</button></div>
     
 </body>
 
+
 <script src="./script.js"></script>
 </html>
+
+<!--.color1 {color: #d467aa;}.color2 {color: #d9888c;}.color3 {color: #d9b17e;}.color4 {color: #dcdc8d;}.color5 {color: #e2e2a7;}-->
+

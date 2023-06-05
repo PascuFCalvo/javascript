@@ -11,7 +11,7 @@ let month = fechan.getMonth() + 1;
 let year = fechan.getFullYear();
 
 
-date.innerHTML = `${month}/${day}/${year}`;
+date.innerHTML = `${day}/${month}/${year}`;
 
 
 
@@ -23,7 +23,7 @@ botonadd.addEventListener('click', (e) => {
         if (text !== ""){
             const li = document.createElement('li');
             const p = document.createElement('p');
-            p.textContent = `${month}/${day}/${year}` + " " + text ;
+            p.textContent = `${day}/${month}/${year}` + " " + text ;
             li.appendChild(p);
             //esto va a añadir al p el boton que se crea al llamar a la funcion anadirbotoncerrar
             li.appendChild(anadirbotoncerrar());   
@@ -38,7 +38,7 @@ botonadd.addEventListener('click', (e) => {
 //voy a crear el boton de cerrar aqui para que no este todo acumulado
 function anadirbotoncerrar(){
     const botoncerrar =document.createElement("button");
-    botoncerrar.textContent = "X";
+    botoncerrar.textContent = "Cerrar tarea";
     //y dentro del botton ya le añadimos el addeventlistener 
     botoncerrar.addEventListener('click', (e) => {
         //e.target hace referencia al botton, pero tu quieres eliminar su elemento padre, por eso llames a parentElement.
