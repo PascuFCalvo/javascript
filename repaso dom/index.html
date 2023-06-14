@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+
+      }
+
+      .menudesplegable {
+
+         place-content: center;
+         border: solid 2px blacK;
+         width: 400px;
+         height: auto;
+         padding: 20px;
+         background-color: aquamarine;
+         z-index: 1;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+
+
+
+      .popupanadido {
+
+         place-content: center;
+         border: solid 2px blacK;
+         width: 400px;
+         height: auto;
+         padding: 20px;
+         background-color: aquamarine;
+         z-index: 1;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+         display: none;
+      }
+
+
+      .arrastraos {
+         display: grid;
+         width: 300px;
+         justify-content: space-between;
+      }
+
+      #elementoarrastrable.amarillo {
+         background-color: yellow;
+         font-weight: normal;
+         margin: 1px;
+         width: 50px;
+         height: 50px;
+      }
+
+      #elementoarrastrable.rojo {
+         background-color: red;
+         font-weight: normal;
+         margin: 1px;
+         width: 50px;
+         height: 50px;
+      }
+
+      #elementocarrito {
+         background-color: #6DB65B;
+         width: 300px;
+         height: 300px;
+         text-align: center;
+         margin-top: 10px;
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         gap: 10px;
+
+      }
+
+      #container {
+         height: auto;
+         width: 300px;
+         background-color: antiquewhite;
+         display: grid;
+         place-content: center;
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr 2fr;
+         display: none;
+
+      }
+
+      .fichas {
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-rows: 1fr 1fr;
+         place-content: center;
+         justify-content: space-between;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="menudesplegable" id="menudesplegable">
+      <p> INTRODUCE TU FECHA DE NACIMIENTO</p>
+
+      <label for="dia">Dia</label>
+      <select name="dia" id="dia">
+
+      </select><label for="mes">Mes</label>
+      <select name="mes" id="mes">
+         <option value="enero" selected>Enero</option>
+         <option value="febrer">Febrero</option>
+         <option value="marzo">Marzo</option>
+         <option value="abril">Abril</option>
+         <option value="mayo">Mayo</option>
+         <option value="junio">Junio</option>
+         <option value="julio">Julio</option>
+         <option value="Agosto">Agosto</option>
+         <option value="Septiembre">Septiembre</option>
+         <option value="Octubre">Octubre</option>
+         <option value="Noviembre">Noviembre</option>
+         <option value="diciembre">Diciembre</option>
+      </select>
+
+
+      <label for="ano">Año</label>
+      <select name="ano" id="ano">
+      </select>
+      <button class="aceptar" id="aceptar" onsubmit="return false">Aceptar</button>
+   </div>
+
+   <div class="popupanadido" id="popupanadido"></div>
+
+
+   <div class="container" id="container">
+      <div class="fichas">
+         <div class="amarillo" id="elementoarrastrable" draggable="true">1
+
+         </div>
+         <div class="amarillo" id="elementoarrastrable" draggable="true">2
+
+         </div>
+         <div class="amarillo" id="elementoarrastrable" draggable="true">3
+
+         </div>
+
+         <div class=rojo id="elementoarrastrable" draggable="true">4
+
+         </div>
+         <div class=rojo id="elementoarrastrable" draggable="true">5</div>
+
+
+         <div class=rojo id="elementoarrastrable" draggable="true">6
+
+         </div>
+      </div>
+
+
+
+
+      <div id="elementocarrito">
+
+      </div>
+   </div>
+
+
+
+
+
+   </div>
+
+   <script src="main.js"></script>
+</body>
+
+</html>

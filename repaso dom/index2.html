@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+
+      body{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         
+      }
+
+      .menudesplegable{
+         
+         place-content: center;
+         border: solid 2px blacK;
+         width: 400px;
+         height: auto;
+         padding: 20px;
+         background-color: aquamarine;
+         z-index: 1;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+
+      
+
+      .popupanadido{
+         
+         place-content: center;
+         border: solid 2px blacK;
+         width: 400px;
+         height: auto;
+         padding: 20px;
+         background-color: aquamarine;
+         z-index: 1;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+         display:none;
+      }
+
+
+      .arrastraos{
+         display:grid;
+         width: 300px;
+         justify-content: space-between;
+      }
+
+      .fichas{
+         background-color: yellow;
+         font-weight: normal;
+         margin: 1px;
+         width: 50px;
+         height: 50px;
+         
+      }
+
+     
+
+      #dropzone{
+         background-color: #6DB65B;
+         width: 300px;
+         height: 300px;
+         margin-top: 10px;  
+         display:grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         gap: 10px;
+     
+      }
+      
+
+      #container{
+         height: auto;
+         width: 300px;
+         background-color: antiquewhite;
+         display: grid;
+         align-content: center;
+         justify-content: center;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         display:none;
+         
+      }   
+      .cajafichas{
+         display: grid;
+         grid-template-rows: 1fr 1fr 1fr;
+         grid-template-columns: 1fr 1fr 1fr;
+         align-content: center;
+         justify-content: center;
+         
+         
+      }
+
+
+   </style>
+</head>
+<body>
+   <div class = "menudesplegable" id = "menudesplegable">
+      <p> INTRODUCE TU FECHA DE NACIMIENTO</p>
+         
+       <label for="dia">Dia</label>
+      <select name ="dia" id = "dia">
+
+      </select><label for="mes">Mes</label>
+      <select name ="mes" id = "mes">
+         <option value= "enero" selected>Enero</option>
+         <option value= "febrer">Febrero</option>
+         <option value= "marzo">Marzo</option>
+         <option value= "abril">Abril</option>
+         <option value= "mayo">Mayo</option>
+         <option value= "junio">Junio</option>
+         <option value= "julio">Julio</option>
+         <option value= "Agosto">Agosto</option>
+         <option value= "Septiembre">Septiembre</option>
+         <option value= "Octubre">Octubre</option>
+         <option value= "Noviembre">Noviembre</option>
+         <option value= "diciembre">Diciembre</option>
+      </select>
+
+      
+      <label for="ano">Año</label>
+      <select name ="ano" id = "ano">
+      </select>
+      <button class = "aceptar" id = "aceptar" onsubmit="return false">Aceptar</button>
+   </div>
+
+   <div class = "popupanadido" id = "popupanadido"></div>
+
+   
+   <div class = "container" id = "container">
+      <div class = "cajafichas">
+            
+         <div 
+            class = "fichas"
+            id ="ficha1" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >1
+            
+            </div>
+
+        <div 
+            class = "fichas"
+            id ="ficha2" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >2
+         
+        </div>
+
+        <div 
+            
+            class = "fichas"
+            id ="ficha3" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >3
+        
+        </div>
+
+       <div 
+            class = "fichas"
+            id ="ficha4" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >4
+       
+        </div>
+
+        <div 
+            class = "fichas"
+            id ="ficha5" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >5
+      
+        </div>
+
+        <div 
+            class = "fichas"
+            id ="ficha6" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >6
+     
+        </div>
+        <div 
+            class = "fichas"
+            id ="ficha7" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >7
+     
+        </div>
+        <div 
+            class = "fichas"
+            id ="ficha8" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >8
+     
+        </div>
+        <div 
+            class = "fichas"
+            id ="ficha9" 
+            draggable = "true"
+            ondragstart = "drag(event)"
+            >9
+     
+        </div>
+    </div>   
+        
+        <div
+        class = "dropzone"
+        id ="dropzone"
+        ondragover="onDragOver(event);"
+        ondrop="onDrop(event);">
+        </div>
+    </div>
+    
+<script src = "main2.js"></script>
+</html>
