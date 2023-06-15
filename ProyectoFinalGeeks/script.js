@@ -15,7 +15,7 @@ let botonterminar = document.querySelector(".botonterminar");
 totalproductos.innerHTML = "Carro vacio";
 totalcompra.innerHTML = 0 + "€";
 
-let despmenu = componentes.addEventListener("mouseenter", desplegable)
+let despmenu = componentes.addEventListener("mouseover", desplegable)
 let cerrmenu = componentes.addEventListener("mouseleave", cerrardesplegable)
 let termin = botonterminar.addEventListener("click", finalizarcompra)
 
@@ -59,8 +59,10 @@ function desplegable(){
 
 }
 function cerrardesplegable(){
-//simplemento comprobando que reacciona al salir
-   console.log("hola")
+    let menu = document.querySelector (".desplegable");
+    let itemsmenu = document.querySelector (".desplegable li");
+    menu.remove(itemsmenu);
+    console.log("hola");
 }
 //consigo el precio caja del producto (un poco ortodoxo)
 function leerprecio(producto) {
