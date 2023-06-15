@@ -240,6 +240,28 @@
 
         }
 
+        .popupcompra p {
+            font-size: x-large;
+            text-align: center;
+
+        }
+
+        .popupcompra{
+            width: 500px;
+            height: 120px;
+            color: #1e2337;
+            background-color: #65a9e6;
+            border: 2px solid #1e2337;
+            border-radius: 16px;
+            display: none;
+            z-index: 20;
+            position: absolute;
+            top:50%;
+            left:25%;
+            
+            
+        }
+
         .desplegable{
             width:150px;
             left: 25px;
@@ -303,6 +325,7 @@
         </div>
     </div>
     <div class=contenedor-principal>
+        <div class ="popupcompra"><p>GRACIAS POR LA COMPRA</p></div>
         <div class="mostrador">
             <div class="producto" draggable="true" ondragstart="drag(event)" id="1">
                 <img src="items_proyecto/monitor.png" class="foto"></img>
@@ -393,13 +416,15 @@
         <div class="botom">
             <div class="zonaarrastre" ondragover="onDragOver(event);" ondrop="onDrop(event);">
                 <p>Arrastra aqui para añadir al carrito</p>
+                
+                
                 <div class="popup">
                     <p>PRODUCTO AÑADIDO</p>
                 </div>
             </div>
             <div class="contenedorcarrito">
                 <div class="titulocarrito"> RESUMEN COMPRA</div>
-                <div class="carrito" id="carrito"></div>
+                <ul class="carrito" id="carrito"></ul>
                 <div class="total">
                     <div class="totalproductos"></div>
                     <div class="totalcompra"></div>

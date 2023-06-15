@@ -22,8 +22,22 @@ let termin = botonterminar.addEventListener("click", finalizarcompra)
 
 //simular finalizar compra
 function finalizarcompra(){
-//comprobando que funciona
-console.log("terminada")
+    let popupfin = document.querySelector('.popupcompra')
+    let borrarlist = document.querySelector('.carrito ');
+    let itemborrar = document.querySelector('.carrito li');
+    if(borrarlist.textContent !== ""){
+    borrarlist.remove(itemborrar);
+    totalproductos.innerHTML = "Carro vacio";
+    totalcompra.innerHTML = 0 + "€"
+    popupfin.style.display = "block";
+    setTimeout(cerrarpopupcompra,2000);
+    }else {alert("El carro esta vacio")}
+}
+
+function cerrarpopupcompra(){
+    let popupcompra = document.querySelector('.popupcompra');
+    popupcompra.style.display = "none";
+    location.reload();
 }
 
 
@@ -120,7 +134,7 @@ function sumarprecio() {
 
 //añade el resumen del producto al carrito
 function anadirdescripcioncarrito() {
-    let parrafo = document.createElement("p");
+    let parrafo = document.createElement("li");
     let botoncerrar = crearbotoncerrar();
     parrafo.style.height = "auto";
     parrafo.style.marginBottom = "8px";
@@ -166,8 +180,8 @@ function cerrarpopup(){
 
 function eliminarproductoresumen() {
     let borrarlist = document.querySelector('.carrito ');
-    let itemborrar = document.querySelector('.carrito p');
-    let precioborrar = document.querySelector('.carrito p').textContent;
+    let itemborrar = document.querySelector('.carrito li');
+    let precioborrar = document.querySelector('.carrito li').textContent;
     let arrayprecioborrar = precioborrar.split(" - ");
     let intborrar = parseInt(arrayprecioborrar[1]);
     borrarlist.removeChild(itemborrar);
