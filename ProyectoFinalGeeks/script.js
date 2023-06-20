@@ -139,8 +139,6 @@ function sumarprecio() {
 function anadirdescripcioncarrito() {
     let parrafo = document.createElement("div");
     parrafo.setAttribute("id", descripcionmov )
-    arraycarro.push(parrafo)
-    console.log(arraycarro)
     let botoncerrar = crearbotoncerrar();
     parrafo.style.height = "auto";
     parrafo.style.marginBottom = "8px";
@@ -152,12 +150,16 @@ function anadirdescripcioncarrito() {
 //creo el boton para poder ir eliminando el producto añadido
 function crearbotoncerrar() {
 
-//agrego la constante para crear la variable local dentro de la funcion
+    //agrego la constante para crear la variable local dentro de la funcion
     const idcarro = descripcionmov;
+    //creo el bton
     let botoncerrar = document.createElement("button");
+    //cada botoncerrar tendra un listener que se activa en el click referente a su id
     botoncerrar.addEventListener("click", function(){
         quitardelcarrito(idcarro)
     });
+
+    //seteo el atributo id =  al de idcarro
     botoncerrar.setAttribute ("id", idcarro)
     botoncerrar.style.height = "18px"
     botoncerrar.style.width = "18px"
@@ -167,11 +169,11 @@ function crearbotoncerrar() {
     botoncerrar.style.marginLeft = "8px"
     return botoncerrar;
 }
-
+//le paso el paramtro id para que apunte a ese elemento concreto
 function quitardelcarrito(id) {
 
     eliminarproductoresumen(id)
-    devolver()
+    devolver(id)
     reducircontador()
 
 }
@@ -191,9 +193,9 @@ function cerrarpopup(){
 
 
 function eliminarproductoresumen(id) {
-    console.log("eliminando", id)
     //seleccionar elemento lista y elemento a borrar
     let borrarlist = document.querySelector('.carrito ');
+    //ahora ya puedo pasarle la id del elemento a borrar
     let itemborrar = document.getElementById(id);
     console.log(itemborrar)
     
@@ -219,9 +221,8 @@ function reducircontador() {
     }
 
 }
-//y aqui es donde esta el fallo, ya que cuando cierra el elemento y lo quita del resumen
-//al devolver la tarjeta, no devuelve la del elemento si no la ultima añadida
-function devolver() { //tb formatea la tarjeta de devolucion
+
+function devolver() { 
     let volvermostrador = document.querySelector('.mostrador')
     let volverproducto = document.querySelector('.zonaarrastre .producto')
     let volverimagen = document.querySelector('.zonaarrastre .producto img')
