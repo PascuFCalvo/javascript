@@ -11,6 +11,7 @@ let descron = 0;
 let componentes = document.querySelector(".componentes");
 let listacomponentes = document.querySelector(".listacomponentes");
 let botonterminar = document.querySelector(".botonterminar");
+let arraycarro = [];
 
 totalproductos.innerHTML = "Carro vacio";
 totalcompra.innerHTML = 0 + "€";
@@ -136,7 +137,10 @@ function sumarprecio() {
 
 //añade el resumen del producto al carrito
 function anadirdescripcioncarrito() {
-    let parrafo = document.createElement("li");
+    let parrafo = document.createElement("div");
+    parrafo.setAttribute("id", descripcionmov )
+    arraycarro.push(parrafo)
+    console.log(arraycarro)
     let botoncerrar = crearbotoncerrar();
     parrafo.style.height = "auto";
     parrafo.style.marginBottom = "8px";
@@ -147,8 +151,12 @@ function anadirdescripcioncarrito() {
 }
 //creo el boton para poder ir eliminando el producto añadido
 function crearbotoncerrar() {
+    const idcarro = descripcionmov;
     let botoncerrar = document.createElement("button");
-    botoncerrar.addEventListener("click", quitardelcarrito)
+    botoncerrar.addEventListener("click", function(){
+        quitardelcarrito(idcarro)
+    });
+    botoncerrar.setAttribute ("id", idcarro)
     botoncerrar.style.height = "18px"
     botoncerrar.style.width = "18px"
     botoncerrar.style.backgroundColor = "orangered"
@@ -158,9 +166,9 @@ function crearbotoncerrar() {
     return botoncerrar;
 }
 
-function quitardelcarrito() {
+function quitardelcarrito(id) {
 
-    eliminarproductoresumen()
+    eliminarproductoresumen(id)
     devolver()
     reducircontador()
 
@@ -180,15 +188,23 @@ function cerrarpopup(){
 }
 
 
-function eliminarproductoresumen() {
+function eliminarproductoresumen(id) {
+    console.log("eliminando", id)
+    //seleccionar elemento lista y elemento a borrar
     let borrarlist = document.querySelector('.carrito ');
-    let itemborrar = document.querySelector('.carrito li');
-    let precioborrar = document.querySelector('.carrito li').textContent;
+    let itemborrar = document.getElementById(id);
+    console.log(itemborrar)
+    
+   
+    //seleccionar elemento para obtener el preio
+    let precioborrar = itemborrar.textContent;
     let arrayprecioborrar = precioborrar.split(" - ");
     let intborrar = parseInt(arrayprecioborrar[1]);
-    borrarlist.removeChild(itemborrar);
 
+
+    borrarlist.removeChild(itemborrar);
     totalcompra.innerHTML = parseInt(totalcompra.innerHTML) - intborrar + "€"
+    
 }
 function reducircontador() {
     contadordeproductos--;

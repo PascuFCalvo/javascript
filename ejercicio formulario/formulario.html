@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio DOM, eventos y funciones</title>
+    <script src ="script.js"></script>
+    <style>
+        .formulario{
+            width: 250px;
+            float: left;
+            margin: 20px;
+            height: 250px;
+
+        }
+        .dashed{
+            border: 3px dashed black;
+            display:  none;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        1-formulario con los campos: nombre, apellidos y edad
+        2.boton de enviar el formulario: evento submit
+        3.mostrar esos datos por pantalla
+        4.validacion del formulario
+
+    -->
+    <h1>Ejercicio DOM, eventos y funciones, curso JS victorrobles.</h1>
+
+    <div class = "formulario">
+        <form action="" method ="POST" id = "formulario" onsubmit = "return false" ><!--Esto no sirve para nada hasta que no reciba algo del backend-->
+            <!--con onsubmit return false el formulario no te redirige a otra pagina-->
+            <label for ="nombre">Nombre</label> <br/>
+            <input type = "text" name = "nombre" id = "nombre"><br/>
+            <label for ="apellidos">Apellidos</label> <br/>
+            <input type = "text" name = "apellidos" id = "apellidos"><br/>
+            <label for ="edad">Edad</label> <br/>
+            <input type = "number" name = "edad" id = "edad"><br/>
+
+            <input type ="submit" value = "enviar" id = "submit"><br/>
+        </form>
+    </div>
+    <div class = "formulario dashed"><h3>User info</h3><hr></div>
+        
+
+</body>
+</html>
