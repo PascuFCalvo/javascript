@@ -151,6 +151,8 @@ function anadirdescripcioncarrito() {
 }
 //creo el boton para poder ir eliminando el producto añadido
 function crearbotoncerrar() {
+
+//agrego la constante para crear la variable local dentro de la funcion
     const idcarro = descripcionmov;
     let botoncerrar = document.createElement("button");
     botoncerrar.addEventListener("click", function(){
