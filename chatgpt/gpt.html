@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  #pokemon-container {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .pokemon-card {
+      width: 120px;
+      height: 150px;
+      border: 2px solid black;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .pokemon-card img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+    }
+    .container {
+      width: 120px;
+      height: 50px;
+      border: 2px solid black;
+      border-radius: 5px;
+      text-align: center;
+      margin-right: 10px;
+    }
+    .container.correct {
+      background-color: lightgreen;
+    }
+    </style>
+</head>
+<body>
+    <h2>Arrastra y suelta los Pokémones correctos:</h2>
+  <div id="pokemon-container">
+    <div class="pokemon-card" id="pokemon1" draggable="true">
+      <img src="https://via.placeholder.com/80" alt="Pokémon 1">
+      <p>#1</p>
+    </div>
+    <div class="pokemon-card" id="pokemon2" draggable="true">
+      <img src="https://via.placeholder.com/80" alt="Pokémon 2">
+      <p>#2</p>
+    </div>
+    <div class="pokemon-card" id="pokemon3" draggable="true">
+      <img src="https://via.placeholder.com/80" alt="Pokémon 3">
+      <p>#3</p>
+    </div>
+    <div class="pokemon-card" id="pokemon4" draggable="true">
+      <img src="https://via.placeholder.com/80" alt="Pokémon 4">
+      <p>#4</p>
+    </div>
+    <div class="pokemon-card" id="pokemon5" draggable="true">
+      <img src="https://via.placeholder.com/80" alt="Pokémon 5">
+      <p>#5</p>
+    </div>
+  </div>
+  <div id="containers">
+    <div class="container" id="container1" data-pokemon="1">#</div>
+    <div class="container" id="container2" data-pokemon="2">#</div>
+    <div class="container" id="container3" data-pokemon="3">#</div>
+    <div class="container" id="container4" data-pokemon="4">#</div>
+    <div class="container" id="container5" data-pokemon="5">#</div>
+  </div>
+  
+    <script src="gpt.js"></script>
+</body>
+</html>
